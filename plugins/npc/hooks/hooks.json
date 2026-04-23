@@ -1,0 +1,29 @@
+{
+  "description": "npc: plays NPC voice clips on Claude Code lifecycle events",
+  "hooks": {
+    "SessionStart": [
+      {"hooks": [{"type": "command", "command": "bash \"${CLAUDE_PLUGIN_ROOT}/hooks/play.sh\" SessionStart", "async": true}]}
+    ],
+    "UserPromptSubmit": [
+      {"hooks": [{"type": "command", "command": "bash \"${CLAUDE_PLUGIN_ROOT}/hooks/play.sh\" UserPromptSubmit", "async": true}]}
+    ],
+    "SubagentStart": [
+      {"hooks": [{"type": "command", "command": "bash \"${CLAUDE_PLUGIN_ROOT}/hooks/play.sh\" SubagentStart", "async": true}]}
+    ],
+    "TaskCompleted": [
+      {"hooks": [{"type": "command", "command": "bash \"${CLAUDE_PLUGIN_ROOT}/hooks/play.sh\" TaskCompleted", "async": true}]}
+    ],
+    "Stop": [
+      {"matcher": "", "hooks": [{"type": "command", "command": "bash \"${CLAUDE_PLUGIN_ROOT}/hooks/play.sh\" TaskCompleted", "async": true}]}
+    ],
+    "PreCompact": [
+      {"matcher": "auto", "hooks": [{"type": "command", "command": "bash \"${CLAUDE_PLUGIN_ROOT}/hooks/play.sh\" PreCompact", "async": true}]}
+    ],
+    "StopFailure": [
+      {"hooks": [{"type": "command", "command": "bash \"${CLAUDE_PLUGIN_ROOT}/hooks/play.sh\" StopFailure", "async": true}]}
+    ],
+    "Elicitation": [
+      {"hooks": [{"type": "command", "command": "bash \"${CLAUDE_PLUGIN_ROOT}/hooks/play.sh\" Elicitation", "async": true}]}
+    ]
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "theme": "warcraft3",
+  "language": "auto",
+  "enabled": true,
+  "volume": 20,
+  "events": {
+    "UserPromptSubmit": true
+  },
+  "probability": {
+    "Elicitation": 0.3
+  }
+}

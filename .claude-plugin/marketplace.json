@@ -1,0 +1,23 @@
+{
+  "name": "elforastero-plugins",
+  "owner": {
+    "name": "Evgheni Djumac",
+    "email": "eugene.dzhumak@gmail.com"
+  },
+  "metadata": {
+    "description": "Claude Code plugins by ElForastero"
+  },
+  "plugins": [
+    {
+      "name": "npc",
+      "description": "Plays NPC voice clips from games and movies on Claude Code lifecycle events",
+      "version": "0.4.0",
+      "author": {
+        "name": "Evgheni Djumac"
+      },
+      "source": "./plugins/npc",
+      "category": "fun",
+      "tags": ["audio", "fun", "hooks"]
+    }
+  ]
+}

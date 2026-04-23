@@ -1,0 +1,7 @@
+{
+  "name": "Warcraft III",
+  "description": "Russian peon/grunt/orc voice lines from Warcraft III.",
+  "languages": ["ru"],
+  "defaultLanguage": "ru",
+  "credits": "Blizzard Entertainment — Warcraft III: Reign of Chaos / The Frozen Throne"
+}
