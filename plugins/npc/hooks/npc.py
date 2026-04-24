@@ -208,8 +208,9 @@ def _play_clip(path: Path, volume: int) -> None:
                            "-af", f"volume={volume_float:.2f}", str(path)],
         ["mplayer",        "-really-quiet", "-volume", str(volume), str(path)],
         ["cvlc",           "--play-and-exit", "--gain", f"{volume_float:.2f}", str(path)],
-        ["powershell.exe", "-c",
-                           f"(New-Object Media.SoundPlayer '{path}').PlaySync()"],
+        ["powershell.exe", "-NoProfile", "-Command",
+                           "(New-Object Media.SoundPlayer $args[0]).PlaySync()",
+                           str(path)],
     ]
 
     for cmd in players:
@@ -261,7 +262,7 @@ def cmd_play(event: str) -> None:
 
 def cmd_toggle() -> None:
     c = _load_config()
-    c["enabled"] = not c.get("enabled", True)
+    c["enabled"] = not _truthy(c.get("enabled"), True)
     _save_config(c)
     print("enabled" if c["enabled"] else "disabled")
 
@@ -339,7 +340,8 @@ def main() -> None:
         cmd_status()
 
 
-try:
-    main()
-except Exception:
-    pass
+if __name__ == "__main__":
+    try:
+        main()
+    except Exception:
+        pass

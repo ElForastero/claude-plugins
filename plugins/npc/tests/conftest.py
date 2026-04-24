@@ -4,9 +4,6 @@ from pathlib import Path
 
 import pytest
 
-# npc.py lives in hooks/, not tests/
-# The bare `try: main()` at the bottom of npc.py runs on import but is safe —
-# main() returns immediately when sys.argv[1:] contains only pytest flags/paths.
 sys.path.insert(0, str(Path(__file__).parent.parent / "hooks"))
 import npc  # noqa: E402
 
