@@ -1,6 +1,6 @@
 {
   "name": "npc",
-  "version": "0.4.1",
+  "version": "0.5.0",
   "description": "Plays NPC voice clips from games and movies on Claude Code lifecycle events. Ships a Warcraft 3 theme; supports drop-in theme packs.",
   "author": { "name": "Evgheni Djumac", "email": "eugene.dzhumak@gmail.com" },
   "homepage": "https://github.com/ElForastero/claude-plugins",
